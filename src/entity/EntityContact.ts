@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
+import { EntityUser } from "./EntityUser";
 
 enum ContactType {
     Address = 1,
@@ -10,14 +11,15 @@ enum ContactType {
 export class EntityContact {
 
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    Id: string
 
-    @Column()
-    entityId: string
+    @ManyToOne(() => EntityUser)
+    // @JoinColumn({ name: "entityId" })
+    EntityUser: EntityUser;
 
     @Column({ type: 'enum', enum: ContactType })
-    contactType: number
+    ContactType: number
 
     @Column()
-    values: string
+    Values: string
 }

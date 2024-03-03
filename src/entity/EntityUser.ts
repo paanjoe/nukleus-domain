@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
+import { EntityRole } from "./EntityRole"
+import { EntityContact } from "./EntityContact"
 
 enum EntityType {
     Customer = 1,
@@ -9,35 +11,41 @@ enum EntityType {
 export class EntityUser {
 
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    Id: string
 
     @Column()
-    email: string
+    Email: string
 
     @Column()
-    passwordSalt: string
+    PasswordSalt: string
 
     @Column()
-    passwordHash: string
+    PasswordHash: string
 
     @Column()
-    profilePicture: string
+    ProfilePicture: string
 
     @Column()
-    firstName: string
+    FirstName: string
 
     @Column()
-    lastName: string
+    LastName: string
     
     @Column({ type: 'enum', enum: EntityType, default: EntityType.Customer })
-    entityType: number
+    EntityType: number
 
     @Column()
-    isActive: boolean
+    IsActive: boolean
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
-    createdDate: Date
+    CreatedDate: Date
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
-    updatedDate: Date
+    UpdatedDate: Date
+
+    @OneToMany(() => EntityRole, (entityRole) => entityRole.EntityUser)
+    EntityRoles: EntityRole[]
+
+    @OneToMany(() => EntityContact, (entityContact) => entityContact.EntityUser)
+    EntityContacts: EntityContact[]
 }

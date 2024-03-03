@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
+import { EntityUser } from "./EntityUser"
 
 enum RoleType {
     Create = 1,
@@ -11,13 +12,24 @@ enum RoleType {
 export class EntityRole {
 
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    Id: string
 
     @Column({type: 'enum', enum: RoleType, default: RoleType.Read })
-    role: number
-
-    
+    Role: number
 
     @Column()
-    values: string
+    Values: string
+
+    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+    CreatedDate: Date
+
+    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+    UpdatedDate: Date
+
+    @Column({ default: true})
+    IsActive: boolean
+
+    @ManyToOne(() => EntityUser)
+    // @JoinColumn({ name: "entityId" })
+    EntityUser: EntityUser;
 }
