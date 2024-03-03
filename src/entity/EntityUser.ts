@@ -25,6 +25,15 @@ export class EntityUser {
     @Column()
     ProfilePicture: string
 
+    @Column({ nullable: true })
+    PasswordResetToken: string
+
+    @Column({ type: 'timestamp', nullable: true })
+    PasswordResetExpires: Date
+
+    @Column({ default: false })
+    IsAccountLocked: boolean
+
     @Column()
     FirstName: string
 
