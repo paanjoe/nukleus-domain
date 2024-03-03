@@ -6,7 +6,7 @@ export class ProductCategory {
     @PrimaryGeneratedColumn('uuid')
     Id: string
 
-    @Column()
+    @Column({ nullable: false })
     CategoryName: string
 
     @Column({ default: true})

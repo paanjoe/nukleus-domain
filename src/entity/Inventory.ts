@@ -22,12 +22,12 @@ export class Inventory {
     @JoinColumn()
     EntityUser: EntityUser
 
-    @Column()
+    @Column({ default: 0} )
     QuantityAvailable: number
 
-    @Column()
+    @Column( { default: 0} )
     Price: number
 
-    @Column()
+    @Column( { default: "RM"} )
     Currency: string
 }

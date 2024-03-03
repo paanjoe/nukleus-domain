@@ -11,7 +11,7 @@ export class Product {
     @Column()
     ProductName: string
 
-    @Column()
+    @Column( {nullable: true} )
     ProductDescription: string
 
     @OneToOne(() => ProductCategory)

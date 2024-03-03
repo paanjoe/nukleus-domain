@@ -22,7 +22,7 @@ export class EntityUser {
     @Column()
     PasswordHash: string
 
-    @Column()
+    @Column({ nullable: true })
     ProfilePicture: string
 
     @Column({ nullable: true })
@@ -43,7 +43,7 @@ export class EntityUser {
     @Column({ type: 'enum', enum: EntityType, default: EntityType.Customer })
     EntityType: number
 
-    @Column()
+    @Column({ default: true })
     IsActive: boolean
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})

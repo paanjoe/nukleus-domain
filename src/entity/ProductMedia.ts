@@ -20,22 +20,22 @@ export class ProductMedia {
     // @JoinColumn({ name: "entityId" })
     Product: Product;
 
-    @Column()
+    @Column({ default: 1 })
     Order: number
 
-    @Column()
+    @Column({ nullable: true })
     Height: number
 
-    @Column()
+    @Column({ nullable: true })
     Width: number
 
-    @Column()
+    @Column({ nullable: true })
     MimeType: string
 
-    @Column()
+    @Column({ nullable: false })
     MediaUrl: string
 
-    @Column()
+    @Column({ nullable: false })
     ThumbnailUrl: string
 
     @Column({ type: 'enum', enum: UploadStatus, default: UploadStatus.Uploading })
