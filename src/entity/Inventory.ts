@@ -2,12 +2,6 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, ManyToMa
 import { EntityUser } from "./EntityUser";
 import { Product } from "./Product";
 
-enum ContactType {
-    Address = 1,
-    Email = 2,
-    Phone = 3
-}
-
 @Entity()
 export class Inventory {
 

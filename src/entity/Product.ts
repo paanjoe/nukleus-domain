@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany, ManyToOne } from "typeorm"
 import { ProductCategory } from "./ProductCategory"
 import { ProductMedia } from "./ProductMedia"
 
@@ -14,7 +14,7 @@ export class Product {
     @Column( {nullable: true} )
     ProductDescription: string
 
-    @OneToOne(() => ProductCategory)
+    @ManyToOne(() => ProductCategory)
     // @JoinColumn()
     ProductCategory: ProductCategory
 
@@ -27,6 +27,6 @@ export class Product {
     @Column({ default: true})
     IsActive: boolean
 
-    @OneToMany(() => ProductMedia, (media) => media.Product)
+    @OneToMany(() => ProductMedia, (media) => media.Product, { cascade: true, nullable: true })
     ProductMedias: ProductMedia[]
 }

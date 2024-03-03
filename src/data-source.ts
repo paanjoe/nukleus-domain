@@ -1,5 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
+const dotenv = require('dotenv');
+dotenv.config();
 
 const databaseConfig = {
     host: process.env.SUPABASEHOST || undefined,
@@ -10,6 +12,9 @@ const databaseConfig = {
 };
 
 function createDataSource() {
+
+    console.log(databaseConfig);
+
     if (Object.values(databaseConfig).every(value => value !== undefined)) {
         return new DataSource({
             type: 'postgres',
@@ -20,9 +25,15 @@ function createDataSource() {
             database: databaseConfig.database,
             synchronize: true,
             logging: false,
-            entities: [],
-            migrations: [],
-            subscribers: [],
+            entities: [
+                "src/entity/*.ts"
+            ],
+            migrations: [
+                "src/migration/**/*.ts"
+            ],
+            subscribers: [
+                "src/subscriber/**/*.ts"
+            ],
         });
     } else {
         console.error('One or more environment variables are undefined');
