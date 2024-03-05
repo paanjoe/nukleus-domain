@@ -48,6 +48,21 @@ This repositories serves as the Domain and Migrations packages for this assessme
 - **Host for Frontend:** xxx
 - **CI/CD:** GitHub Actions
 
+## Environment Variables - Nukleus-Domain
+
+To run this Nukleus Domain, you need this `.env` file in the root of the project. You can refer the .env.example file.
+
+```
+    SUPABASEURL=xxxxxxxxxxxxxxx
+    SUPABASEKEY=xxxxxxxxxxxxxxx
+    SUPABASEHOST=xxxxxxxxxxxxxxx
+    SUPABASEPORT=xxxxxxxxxxxxxxx
+    SUPABASEUSER=xxxxxxxxxxxxxxx
+    SUPABASEPASSWORD=xxxxxxxxxxxxxxx
+    SUPABASEDATABASE=xxxxxxxxxxxxxxx
+    DATABASE_URL=xxxxxxxxxxxxxxx
+```
+
 ## Deployment | Command
 
 To run this project locally. Please use the command below whenever makes sense:
