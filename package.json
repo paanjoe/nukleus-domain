@@ -1,5 +1,6 @@
 {
    "dependencies": {
+      "@prisma/client": "^5.10.2",
       "@supabase/supabase-js": "^2.39.7",
       "dotenv": "^16.4.5",
       "pg": "^8.4.0",
@@ -15,6 +16,7 @@
    },
    "scripts": {
       "start": "ts-node src/index.ts",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-commonjs",
+      "gen-types": "supabase gen types typescript --linked >supabase/types/supabase.ts"
    }
 }
