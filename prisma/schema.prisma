@@ -55,7 +55,7 @@ model entity_user {
 model inventory {
   Id                String       @id(map: "PK_057fdfcc3d80c960e76a966a817") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   QuantityAvailable Int          @default(0)
-  Price             Float          @default(0)
+  Price             Float        @default(0)
   Currency          String       @default("RM") @db.VarChar
   productId         String?      @db.Uuid
   entityUserId      String?      @db.Uuid
