@@ -24,4 +24,4 @@ jobs:
       - run: npm ci
 
       - name: Install Prisma
-        run: npx prisma db pull
+        run: npx prisma generate
