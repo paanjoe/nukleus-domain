@@ -31,6 +31,7 @@ This repositories serves as the Domain and Migrations packages for this assessme
 - **ORM Framework:** PrismaORM
 - **Serverless:** Supabase
 - **Database Engine:** Postgres
+- **CI/CD:** GitHub Actions --> Just a Migrations Checker is in sync with the Database
 
 #### Nukleus-Backend
 
