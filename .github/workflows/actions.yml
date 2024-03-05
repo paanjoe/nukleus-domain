@@ -23,12 +23,18 @@ jobs:
           cache: "npm"
       - run: npm ci
 
-      - name: Generate Prisma Client
+      - name: Generate Prisma (Test)
         run: npx prisma generate
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
-      - name: Check prisma status
-        run: npx prisma migrate status
+      - name: Check Prisma Migrations Status
+        run: |
+          OUTPUT=$(npx prisma migrate status)
+          echo "$OUTPUT"
+          if [[ $OUTPUT == *"Not applied"* ]]; then
+              echo "There are pending migrations"
+              exit 1
+          fi
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
