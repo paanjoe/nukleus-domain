@@ -85,6 +85,18 @@ Pull Db Schema
   npm run db-pull
 ```
 
+Generate Prisma Client
+
+```bash
+  npm run generate
+```
+
+Check Migrations Status
+
+```bash
+  npm run status
+```
+
 Performing Migrations to DB Schema
 
 ** Note: This already run seeder after successful migrations **

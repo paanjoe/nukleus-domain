@@ -21,6 +21,8 @@
     "start": "ts-node src/index.ts",
     "seed": "npx prisma db seed",
     "migrate": "npx prisma migrate dev --name",
-    "db-pull": "npx prisma db pull"
+    "db-pull": "npx prisma db pull",
+    "generate": "npx prisma generate",
+    "status": "npx prisma migrate status"
   }
 }
