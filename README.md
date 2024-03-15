@@ -12,17 +12,19 @@ This repositories serves as the Domain and Migrations packages for this assessme
 
 ## Documentation
 
-### [Demo Link](https://www.figma.com/file/AE6vCE7lwxDaMI32c0nVWk/%5BFarhan%5D-GovTech-Assessment-Brainstorm-Board?type=whiteboard&t=ewtZZiMzR75Sc1k7-1)
+### [Demo Link](https://nukleus-assessment.web3ramen.com/)
+
+[API Url](https://nukleus-backend.onrender.com)
 
 [Figma Documentation](https://www.figma.com/file/AE6vCE7lwxDaMI32c0nVWk/%5BFarhan%5D-GovTech-Assessment-Brainstorm-Board?type=whiteboard&t=ewtZZiMzR75Sc1k7-1)
 
 [Migrations-Domain Repositories](https://github.com/paanjoe/nukleus-domain)
 
-[Backend-Service Repositories](https://www.figma.com/file/AE6vCE7lwxDaMI32c0nVWk/%5BFarhan%5D-GovTech-Assessment-Brainstorm-Board?type=whiteboard&t=ewtZZiMzR75Sc1k7-1)
+[Backend-Service Repositories](https://github.com/paanjoe/nukleus-backend)
 
-[Frontend Repositories](https://www.figma.com/file/AE6vCE7lwxDaMI32c0nVWk/%5BFarhan%5D-GovTech-Assessment-Brainstorm-Board?type=whiteboard&t=ewtZZiMzR75Sc1k7-1)
+[Frontend Repositories](https://github.com/paanjoe/nukleus-frontend)
 
-[API Documentation](https://www.figma.com/file/AE6vCE7lwxDaMI32c0nVWk/%5BFarhan%5D-GovTech-Assessment-Brainstorm-Board?type=whiteboard&t=ewtZZiMzR75Sc1k7-1)
+[API Documentation](https://github.com/paanjoe/nukleus-backend/tree/main/test-cases)
 
 ## Tech Stack | Framework
 
@@ -35,18 +37,23 @@ This repositories serves as the Domain and Migrations packages for this assessme
 
 #### Nukleus-Backend
 
-- **xxx:** xxx
+- **ORM Model:** PrismaORM
+- **Backend Framework:** ExpressJS
 - **Api Documentation:** Swagger
-- **Unit Test:** xxx
+- **CI/CD:** GitHub Actions
+- **Infrastructure:** Render.com
+- **Unit Test:** Jest & Supertest
 
 #### Nukleus-Frontend
 
-- **xxx:** xxx
+- **Framework:** React Next.js
+- **UI Kit:** TailwindCSS
+- **Infrastructure:** Vercel.com
 
 #### Deployment Infrastructure
 
-- **Host for Backend:** xxx
-- **Host for Frontend:** xxx
+- **Host for Backend:** Render.com
+- **Host for Frontend:** Vercel.com
 - **CI/CD:** GitHub Actions
 
 ## Environment Variables - Nukleus-Domain
